@@ -1,0 +1,4 @@
+data/System/TrashPlugin.txt 0644
+lib/Foswiki/Plugins/TrashPlugin/Config.spec 0644
+lib/Foswiki/Plugins/TrashPlugin/Core.pm 0644
+lib/Foswiki/Plugins/TrashPlugin.pm 0644

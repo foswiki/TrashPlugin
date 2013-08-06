@@ -1,0 +1,55 @@
+%META:TOPICINFO{author="micha" comment="reprev" date="1375799991" format="1.1" reprev="2" version="2"}%
+---+!! %TOPIC%
+%SHORTDESCRIPTION%
+
+%TOC%
+
+This plugin lets you empty the trash bin on a regular base or immediately on request.
+By default deleting a topic, an attachment or a web, items are moved to the [[%TRASHWEB%.%HOMETOPIC%]].
+It will stay there for recovery until the trash is emptied. Cleaning up the trash bin will wipe out items and their history from the
+store permanently, that is the operation can't be reverted anymore, even not by checking out a previous revision.
+
+For this reason cleaning up the trash can only be performed by an admin user under the assumption they know better
+what they are doing.
+
+---++ Installation Instructions
+
+%$INSTALL_INSTRUCTIONS%
+
+%TOPIC% is able to clean up items from the trash older than a specific timespan specified in ={%TOPIC%}{Expire}= defaulting to 1M (one month).
+To perform regular maintenance automatically add a cron job calling the =cleanUp= REST handler of %TOPIC%.
+
+<verbatim>
+0 0 * * 0 cd <foswiki-dir>/bin && ./rest /TrashPlugin/cleanUp
+</verbatim>
+
+To clean up the trash of all virtual hosts installed via [[Foswiki:Extensions/VirtualHostingContrib][VirtualHostingContrib]] use
+
+<verbatim>
+0 0 * * 0 cd <foswiki-dir>/tools && ./virtualhosts-rest /TrashPlugin/cleanUp
+</verbatim>
+
+Optionally add an "Empty Trash" button to [[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%.%HOMETOPIC%]].
+
+<verbatim class="tml">
+%BUTTON{"%MAKETEXT{"Empty Trash"}%" 
+  icon="bin" 
+  href="%SCRIPTURLPATH{"rest"}%/TrashPlugin/cleanUp?redirectto=%WEB%.%TOPIC%&expire=0"
+}%
+</verbatim>
+
+---++ Info
+<!--
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
+
+|  Author(s): | Michael Daum|
+|  Copyright: | &copy; 2013 Michael Daum http://michaeldaumconsulting.com |
+|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  06 Aug 2013: | initial release |
+|  Dependencies: | %$DEPENDENCIES% |
+|  Home page: | Foswiki:Extensions/%TOPIC% |
+|  Support: | Foswiki:Support/%TOPIC% |
