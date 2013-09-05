@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1375799991" format="1.1" reprev="2" version="2"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1375877703" format="1.1" reprev="2" version="3"}%
 ---+!! %TOPIC%
 %SHORTDESCRIPTION%
 
@@ -20,13 +20,13 @@ what they are doing.
 To perform regular maintenance automatically add a cron job calling the =cleanUp= REST handler of %TOPIC%.
 
 <verbatim>
-0 0 * * 0 cd <foswiki-dir>/bin && ./rest /TrashPlugin/cleanUp
+0 0 * * * cd <foswiki-dir>/bin && ./rest /TrashPlugin/cleanUp
 </verbatim>
 
 To clean up the trash of all virtual hosts installed via [[Foswiki:Extensions/VirtualHostingContrib][VirtualHostingContrib]] use
 
 <verbatim>
-0 0 * * 0 cd <foswiki-dir>/tools && ./virtualhosts-rest /TrashPlugin/cleanUp
+0 0 * * * cd <foswiki-dir>/tools && ./virtualhosts-rest /TrashPlugin/cleanUp
 </verbatim>
 
 Optionally add an "Empty Trash" button to [[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%.%HOMETOPIC%]].
@@ -49,6 +49,7 @@ Optionally add an "Empty Trash" button to [[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%.%
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  05 Sep 2013: | fixed tainted issue |
 |  06 Aug 2013: | initial release |
 |  Dependencies: | %$DEPENDENCIES% |
 |  Home page: | Foswiki:Extensions/%TOPIC% |

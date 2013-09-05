@@ -85,6 +85,7 @@ sub cleanUp {
   my $it = $obj->eachAttachment();
   while ($it->hasNext()) {
     my $attachment = $it->next();
+    $attachment = Foswiki::Sandbox::untaintUnchecked($attachment);    # SMELL: strange...these strings are tainted sometimes
     my $info = $obj->getAttachmentRevisionInfo($attachment);
     if ($info->{date} < $this->{expire}) {
       #$this->writeDebug("$attachment expired");
@@ -94,7 +95,6 @@ sub cleanUp {
     }
  
     $this->writeDebug("deleting attachment $attachment");
-    $attachment = Foswiki::Sandbox::untaintUnchecked($attachment);    # SMELL: strange...these strings are tainted sometimes
     $obj->removeFromStore($attachment) unless $this->{dry};
   }
  
@@ -103,7 +103,7 @@ sub cleanUp {
   foreach my $info ($obj->find("FILEATTACHMENT")) {
     my $name = $info->{name};
     next if $obj->hasAttachment($name);
-    $this->writeDebug("attachment $name not found in trash ... cleaning up");
+    #$this->writeDebug("attachment $name not found in trash ... cleaning up");
     $obj->remove("FILEATTACHMENT", $name) unless $this->{dry};
     $saveNeeded = 1;
   }
@@ -131,7 +131,7 @@ sub cleanUp {
     }
   }
 
-  return "done";
+  return;
 }
 
 sub removeFromStore {

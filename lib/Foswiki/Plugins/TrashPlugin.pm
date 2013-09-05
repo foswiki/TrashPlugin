@@ -20,8 +20,8 @@ use warnings;
 
 use Foswiki::Func ();
 
-use version; our $VERSION = version->declare("v1.0.0");
-our $RELEASE = '06 Aug 2013';
+use version; our $VERSION = version->declare("1.0.1");
+our $RELEASE = '05 Sep 2013';
 our $SHORTDESCRIPTION = 'Maintain the Trash web';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
