@@ -36,7 +36,7 @@ sub core {
 }
 
 sub initPlugin {
-  Foswiki::Func::registerRESTHandler("cleanUp", sub { return core->cleanUp(@_); });
+  Foswiki::Func::registerRESTHandler("cleanUp", sub { return core->cleanUp(@_); }, authenticate => 0);
   return 1;
 }
 
