@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# TrashPlugin is Copyright (C) 2013 Michael Daum http://michaeldaumconsulting.com
+# TrashPlugin is Copyright (C) 2013-2014 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,8 +20,8 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '1.01';
-our $RELEASE = '1.01';
+our $VERSION = '1.02';
+our $RELEASE = '1.02';
 our $SHORTDESCRIPTION = 'Maintain the Trash web';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
@@ -36,7 +36,11 @@ sub core {
 }
 
 sub initPlugin {
-  Foswiki::Func::registerRESTHandler("cleanUp", sub { return core->cleanUp(@_); }, authenticate => 0);
+  Foswiki::Func::registerRESTHandler("cleanUp", sub { return core->cleanUp(@_); }, 
+    authenticate => 0,
+    validate => 0,
+    http_allow => 'GET,POST',
+  );
   return 1;
 }
 
