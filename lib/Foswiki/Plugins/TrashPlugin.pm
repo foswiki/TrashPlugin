@@ -20,8 +20,8 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '1.02';
-our $RELEASE = '1.02';
+our $VERSION = '1.10';
+our $RELEASE = '1.10';
 our $SHORTDESCRIPTION = 'Maintain the Trash web';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
@@ -41,6 +41,8 @@ sub initPlugin {
     validate => 0,
     http_allow => 'GET,POST',
   );
+
+  $core = undef;
   return 1;
 }
 

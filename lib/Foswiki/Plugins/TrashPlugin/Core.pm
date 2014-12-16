@@ -51,8 +51,8 @@ sub cleanUp {
 
   my $request = $session->{request};
 
-  $this->{dry} = Foswiki::Func::isTrue($request->param("dry"), 0);
-  $this->{debug} = Foswiki::Func::isTrue($request->param("debug"), $this->{debug});
+  $this->{dry} = Foswiki::Func::isTrue(scalar $request->param("dry"), 0);
+  $this->{debug} = Foswiki::Func::isTrue(scalar $request->param("debug"), $this->{debug});
 
   my $expire = $request->param("expire");
   $expire = ($Foswiki::cfg{TrashPlugin}{Expire} || '1M') unless defined $expire;
