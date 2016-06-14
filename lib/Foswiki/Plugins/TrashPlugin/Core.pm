@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# TrashPlugin is Copyright (C) 2013-2014 Michael Daum http://michaeldaumconsulting.com
+# TrashPlugin is Copyright (C) 2013-2016 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -30,10 +30,14 @@ sub new {
   my $class = shift;
 
   my $this = bless({
-    debug => $Foswiki::cfg{TrashPlugin}{Debug},
-    dry => 0,
-    @_
-  }, $class);
+      debug => $Foswiki::cfg{TrashPlugin}{Debug},
+      expire => $Foswiki::cfg{TrashPlugin}{Expire} || '1M',
+      excludeTopic => $Foswiki::cfg{TrashPlugin}{ExcludeTopic} || '^(WebAtom|WebRss|WebSearch.*|WebChanges|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment|WebLeftBar.*)$',
+      dry => 0,
+      @_
+    },
+    $class
+  );
 
   return $this;
 }
@@ -55,7 +59,7 @@ sub cleanUp {
   $this->{debug} = Foswiki::Func::isTrue(scalar $request->param("debug"), $this->{debug});
 
   my $expire = $request->param("expire");
-  $expire = ($Foswiki::cfg{TrashPlugin}{Expire} || '1M') unless defined $expire;
+  $expire = $this->{expire} unless defined $expire;
   $expire =~ s/^\+\-//;
   $expire = "0s" if $expire eq "0"; # special case: empty all
   $expire = '-' . $expire;
@@ -69,7 +73,7 @@ sub cleanUp {
 
   # cleaning up topics
   foreach my $topic (Foswiki::Func::getTopicList($web)) {
-    next if $topic =~ /^(WebAtom|WebRss|WebSearch.*|WebChanges|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment)$/;
+    next if $topic =~ /$this->{excludeTopic}/;
  
     my ($date) = Foswiki::Func::getRevisionInfo($web, $topic);
     next unless $date < $this->{expire};
