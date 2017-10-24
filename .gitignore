@@ -1,8 +1,8 @@
 *.swp
-TrashPlugin.md5
-TrashPlugin.sha1
-TrashPlugin.tgz
-TrashPlugin.txt
-TrashPlugin.zip
-TrashPlugin_installer
-TrashPlugin_installer.pl
+/TrashPlugin.md5
+/TrashPlugin.sha1
+/TrashPlugin.tgz
+/TrashPlugin.txt
+/TrashPlugin.zip
+/TrashPlugin_installer
+/TrashPlugin_installer.pl

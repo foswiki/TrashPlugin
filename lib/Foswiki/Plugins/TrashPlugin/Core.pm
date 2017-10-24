@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# TrashPlugin is Copyright (C) 2013-2016 Michael Daum http://michaeldaumconsulting.com
+# TrashPlugin is Copyright (C) 2013-2017 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -26,13 +26,15 @@ use Foswiki::Sandbox ();
 use Error qw (:try);
 use CGI::Util ();
 
+use constant TRACE => 0;
+
 sub new {
   my $class = shift;
 
   my $this = bless({
       debug => $Foswiki::cfg{TrashPlugin}{Debug},
       expire => $Foswiki::cfg{TrashPlugin}{Expire} || '1M',
-      excludeTopic => $Foswiki::cfg{TrashPlugin}{ExcludeTopic} || '^(WebAtom|WebRss|WebSearch.*|WebChanges|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment|WebLeftBar.*)$',
+      excludeTopic => $Foswiki::cfg{TrashPlugin}{ExcludeTopic} || '^(WebAtom|WebRss|WebSearch.*|WebStatistics|WebChanges|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment|WebLeftBar.*)$',
       dry => 0,
       @_
     },
@@ -45,7 +47,7 @@ sub new {
 sub writeDebug {
   my ($this, $msg) = @_;
 
-  print STDERR "$msg\n" if $this->{debug};
+  print STDERR "TrashPlugin - $msg\n" if $this->{debug} || TRACE;
 }
 
 sub cleanUp {
@@ -74,6 +76,7 @@ sub cleanUp {
   # cleaning up topics
   foreach my $topic (Foswiki::Func::getTopicList($web)) {
     next if $topic =~ /$this->{excludeTopic}/;
+    next if $topic eq 'WebStatistics'; # just to make sure
  
     my ($date) = Foswiki::Func::getRevisionInfo($web, $topic);
     next unless $date < $this->{expire};
@@ -119,19 +122,27 @@ sub cleanUp {
 
   # clean up trashed webs
   foreach my $subWeb (Foswiki::Func::getListOfWebs(undef, $Foswiki::cfg{TrashWebName})) {
+    $this->writeDebug("checking subWeb=$subWeb");
     my $webExpired = 1;
     foreach my $topic (Foswiki::Func::getTopicList($subWeb)) {
+      next if $topic =~ /$this->{excludeTopic}/;
+      next if $topic eq 'WebStatistics'; # just to make sure
+
       my ($date) = Foswiki::Func::getRevisionInfo($subWeb, $topic);
       if ($date >= $this->{expire}) {
+        $this->writeDebug("... $topic didn't expire yet");
         $webExpired = 0;
         last;
       }
     }
 
     if ($webExpired) {
+      $this->writeDebug("... deleting web $subWeb");
       $this->writeDebug("deleting web $subWeb");
       my $webObj = Foswiki::Meta->load($Foswiki::Plugins::SESSION, $subWeb);
       $webObj->removeFromStore();
+    } else {
+      $this->writeDebug("... NOT deleting web $subWeb yet");
     }
   }
 

@@ -24,6 +24,6 @@ $Foswiki::cfg{TrashPlugin}{Expire} = '1M';
 
 # **REGEX EXPERT**
 # A regular expression of topics that should not be deleted from trash.
-$Foswiki::cfg{TrashPlugin}{ExcludeTopic} = '^(WebAtom|WebRss|WebSearch.*|WebChanges|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment|WebLeftBar.*)$';
+$Foswiki::cfg{TrashPlugin}{ExcludeTopic} = '^(WebAtom|WebRss|WebSearch.*|WebChanges|WebStatistics|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment|WebLeftBar.*)$';
 
 1;
