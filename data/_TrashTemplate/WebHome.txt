@@ -1,0 +1,29 @@
+%META:TOPICINFO{author="ProjectContributor" date="1433037425" format="1.1" version="1"}%
+---+!! %TOPICTITLE%
+%MAKETEXT{"This is the Trash. Here you can undelete topics; deleted attachments are in TrashAttachment." args="<b><nop>%WEB%</b>"}% 
+
+%BUTTON{"%MAKETEXT{"Empty Trash"}%" 
+  icon="bin" 
+  href="%SCRIPTURLPATH{"rest"}%/TrashPlugin/cleanUp?topic=%WEB%.%TOPIC%&redirectto=%ENCODE{"%SCRIPTURL{"view"}%/%WEB%/%TOPIC%" type="url"}%&expire=0"
+}%
+
+<div %IF{"not context FlexWebListPluginEnabled" then="class='foswikiHidden'">
+%FLEXWEBLIST{
+   subwebs="%WEB%.*"
+   header="---++ Webs$n"
+   subheader=""
+   format="$indent* [[$web.WebPreferences][$name]]$n"
+}%
+</div>
+
+%SEARCH{"1" 
+  type="query" 
+  nototal="on" 
+  nosearch="on" 
+  reverse="on" 
+  order="modified" 
+  limit="15"
+  header="---++ %MAKETEXT{"Last 15 changes in this web"}%"
+  excludetopic="WebPreferences, WebTopicList, WebSearch, WebRss, WebAtom, WebHome, WebNotify, WebIndex, WebLeftBar, WebChanges, TrashAttachment, WebStatistics"
+  footer="[[WebTopicList][%MAKETEXT{"more..."}%]]"
+}%

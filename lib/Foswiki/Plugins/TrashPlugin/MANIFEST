@@ -1,5 +1,16 @@
 !noci
 data/System/TrashPlugin.txt 0644
+data/_TrashTemplate/TrashAttachment.txt 0644
+data/_TrashTemplate/WebAtom.txt 0644
+data/_TrashTemplate/WebChanges.txt 0644
+data/_TrashTemplate/WebHome.txt 0644
+data/_TrashTemplate/WebIndex.txt 0644
+data/_TrashTemplate/WebNotify.txt 0644
+data/_TrashTemplate/WebPreferences.txt 0644
+data/_TrashTemplate/WebRss.txt 0644
+data/_TrashTemplate/WebSearch.txt 0644
+data/_TrashTemplate/WebTopicList.txt 0644
 lib/Foswiki/Plugins/TrashPlugin/Config.spec 0644
 lib/Foswiki/Plugins/TrashPlugin/Core.pm 0644
+lib/Foswiki/Plugins/TrashPlugin/DEPENDENCIES 0644
 lib/Foswiki/Plugins/TrashPlugin.pm 0644

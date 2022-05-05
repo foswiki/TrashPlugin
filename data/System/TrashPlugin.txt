@@ -12,6 +12,13 @@ store permanently, that is the operation can't be reverted anymore, even not by 
 For this reason cleaning up the trash can only be performed by an admin user under the assumption they know better
 what they are doing.
 
+---++ Local Trash webs
+
+!%TOPIC% supports having local Trash webs, that is a subweb called "Trash" of a current web. Given you created a web <nop>MyWeb.Trash
+it will be detected and used as trash instead of the global Trash web where all content goes normally. A trash web can be created
+using the =_TrashTemplate= web. The currently used trash web is then made available in the preference setting =%<nop>TRASHWEB%=.
+
+
 ---++ Installation Instructions
 
 %$INSTALL_INSTRUCTIONS%
@@ -42,6 +49,9 @@ Optionally add an "Empty Trash" button to [[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%.%
 %$DEPENDENCIES%
 
 ---++ Change History
+|  05 Mar 2022: | add support for custom Trash webs |
+|  05 Oct 2021: | make deleting attachments more robust |
+|  11 Feb 2021: | implemented custom trash webs: this allows to have local Trash subwebs |
 |  24 Oct 2017: | don't delete <nop>WebStatistics from trash |
 |  30 Jun 2017: | fixed deletion of webs in trash |
 |  14 Jun 2016: | added parameter to configure which topics should be exempted from trashing; adding <nop>WebLeftBar by default now |
@@ -53,7 +63,7 @@ Optionally add an "Empty Trash" button to [[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%.%
 
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2013-2017 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2013-2022 Michael Daum"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Home" title="Home" value="Foswiki:Extensions/%TOPIC%"}%
 %META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%

@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# TrashPlugin is Copyright (C) 2013-2017 Michael Daum http://michaeldaumconsulting.com
+# TrashPlugin is Copyright (C) 2013-2022 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -34,7 +34,7 @@ sub new {
   my $this = bless({
       debug => $Foswiki::cfg{TrashPlugin}{Debug},
       expire => $Foswiki::cfg{TrashPlugin}{Expire} || '1M',
-      excludeTopic => $Foswiki::cfg{TrashPlugin}{ExcludeTopic} || '^(WebAtom|WebRss|WebSearch.*|WebStatistics|WebChanges|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment|WebLeftBar.*)$',
+      excludeTopic => $Foswiki::cfg{TrashPlugin}{ExcludeTopic} || '^(WebAtom|WebRss|WebSearch|WebStatistics|WebChanges|WebHome|WebNotify|WebTopicList|WebIndex|WebLeftBar|WebSideBar|WebPreferences|TrashAttachment$',
       dry => 0,
       @_
     },
@@ -50,7 +50,7 @@ sub writeDebug {
   print STDERR "TrashPlugin - $msg\n" if $this->{debug} || TRACE;
 }
 
-sub cleanUp {
+sub restCleanUp {
   my ($this, $session, $subject, $verb, $response) = @_;
 
   throw Error::Simple("only admins may empty the trash") unless Foswiki::Func::isAnAdmin();
@@ -67,11 +67,20 @@ sub cleanUp {
   $expire = '-' . $expire;
   $this->{expire} = CGI::Util::expire_calc($expire);
 
-  $this->writeDebug("testing items in web $Foswiki::cfg{TrashWebName} older than " . Foswiki::Time::formatTime($this->{expire}));
+  my $trashWebName = $Foswiki::cfg{TrashWebName} || 'Trash';
+  foreach my $web (Foswiki::Func::getListOfWebs()) {
+    next unless $web =~ /^(.*[\.\/])?$trashWebName$/;
+    $this->cleanUpWeb($web, $expire);
+  }
 
-  my $web = $Foswiki::cfg{TrashWebName} || 'Trash';
+  return;
+}
 
-  throw Error::Simple("$web does not exist") unless Foswiki::Func::webExists($web);
+sub cleanUpWeb {
+  my ($this, $web, $expire) = @_;
+
+  return unless Foswiki::Func::webExists($web);
+  $this->writeDebug("testing items in web $web older than " . Foswiki::Time::formatTime($this->{expire}));
 
   # cleaning up topics
   foreach my $topic (Foswiki::Func::getTopicList($web)) {
@@ -81,8 +90,7 @@ sub cleanUp {
     my ($date) = Foswiki::Func::getRevisionInfo($web, $topic);
     next unless $date < $this->{expire};
  
-    #$this->writeDebug("$web.$topic expired");#.Foswiki::Time::formatTime($date));
- 
+    $this->writeDebug("$web.$topic expired");
     $this->removeFromStore($web, $topic);
   }
  
@@ -90,19 +98,21 @@ sub cleanUp {
   # not using the Foswiki::Func api for performance reasons
   my $obj = Foswiki::Meta->load($Foswiki::Plugins::SESSION, $web, 'TrashAttachment');
   my $it = $obj->eachAttachment();
-  while ($it->hasNext()) {
-    my $attachment = $it->next();
-    $attachment = Foswiki::Sandbox::untaintUnchecked($attachment);    # SMELL: strange...these strings are tainted sometimes
-    my $info = $obj->getAttachmentRevisionInfo($attachment);
-    if ($info->{date} < $this->{expire}) {
-      #$this->writeDebug("$attachment expired");
+  foreach my $info ($obj->find("FILEATTACHMENT")) {
+    my $attachment = $info->{name};
+    if (!$info->{date} || $info->{date} < $this->{expire}) {
+      $this->writeDebug("$attachment expired");
     } else {
-      #$this->writeDebug("$attachment still fresh last modified ".Foswiki::Time::formatTime($info->{date}));
+      $this->writeDebug("$attachment still fresh last modified ".Foswiki::Time::formatTime($info->{date}));
       next;
     }
  
     $this->writeDebug("deleting attachment $attachment");
-    $obj->removeFromStore($attachment) unless $this->{dry};
+    if ($obj->hasAttachment($attachment)) {
+      $obj->removeFromStore($attachment) unless $this->{dry};
+    } else {
+      $this->writeDebug("woops, cannot delete attachment $attachment");
+    }
   }
  
   # fixing META:FILEATTACHMENT list
@@ -121,7 +131,8 @@ sub cleanUp {
   }
 
   # clean up trashed webs
-  foreach my $subWeb (Foswiki::Func::getListOfWebs(undef, $Foswiki::cfg{TrashWebName})) {
+  foreach my $subWeb (Foswiki::Func::getListOfWebs(undef, $web)) {
+    next unless Foswiki::Func::webExists($subWeb);
     $this->writeDebug("checking subWeb=$subWeb");
     my $webExpired = 1;
     foreach my $topic (Foswiki::Func::getTopicList($subWeb)) {
@@ -141,12 +152,16 @@ sub cleanUp {
       $this->writeDebug("deleting web $subWeb");
       my $webObj = Foswiki::Meta->load($Foswiki::Plugins::SESSION, $subWeb);
       $webObj->removeFromStore();
+
+      if (Foswiki::Func::getContext()->{FlexWebListPluginEnabled}) {
+        require Foswiki::Plugins::FlexWebListPlugin;
+        Foswiki::Plugins::FlexWebListPlugin::getCore()->removeWeb($subWeb);
+      }
+
     } else {
       $this->writeDebug("... NOT deleting web $subWeb yet");
     }
   }
-
-  return;
 }
 
 sub removeFromStore {
