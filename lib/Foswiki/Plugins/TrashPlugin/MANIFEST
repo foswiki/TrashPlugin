@@ -1,7 +1,6 @@
 !noci
 data/System/TrashPlugin.txt 0644
 data/_TrashTemplate/TrashAttachment.txt 0644
-data/_TrashTemplate/WebAtom.txt 0644
 data/_TrashTemplate/WebChanges.txt 0644
 data/_TrashTemplate/WebHome.txt 0644
 data/_TrashTemplate/WebIndex.txt 0644
@@ -14,3 +13,27 @@ lib/Foswiki/Plugins/TrashPlugin/Config.spec 0644
 lib/Foswiki/Plugins/TrashPlugin/Core.pm 0644
 lib/Foswiki/Plugins/TrashPlugin/DEPENDENCIES 0644
 lib/Foswiki/Plugins/TrashPlugin.pm 0644
+locale/TrashPlugin/bg.po 0644
+locale/TrashPlugin/cs.po 0644
+locale/TrashPlugin/da.po 0644
+locale/TrashPlugin/de.po 0644
+locale/TrashPlugin/el.po 0644
+locale/TrashPlugin/es.po 0644
+locale/TrashPlugin/fi.po 0644
+locale/TrashPlugin/Foswiki.pot 0644
+locale/TrashPlugin/fr.po 0644
+locale/TrashPlugin/it.po 0644
+locale/TrashPlugin/ja.po 0644
+locale/TrashPlugin/ko.po 0644
+locale/TrashPlugin/nl.po 0644
+locale/TrashPlugin/no.po 0644
+locale/TrashPlugin/pl.po 0644
+locale/TrashPlugin/pt-br.po 0644
+locale/TrashPlugin/pt.po 0644
+locale/TrashPlugin/ru.po 0644
+locale/TrashPlugin/sv.po 0644
+locale/TrashPlugin/tlh.po 0644
+locale/TrashPlugin/tr.po 0644
+locale/TrashPlugin/uk.po 0644
+locale/TrashPlugin/zh-cn.po 0644
+locale/TrashPlugin/zh-tw.po 0644

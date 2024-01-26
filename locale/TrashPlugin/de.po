@@ -1,0 +1,42 @@
+# Foswiki translation for Deutsch
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Foswiki $Id\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Michael Daum <foswiki@michaeldaumconsulting.com>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"distribution-master/de/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+msgid "Empty Trash"
+msgstr "Trash leeren"
+
+#: data/_TrashTemplate/WebHome.txt:26
+msgid "Last 15 changes in this web"
+msgstr "Die letzten 15 Änderungen in diesem Web"
+
+#: data/_TrashTemplate/WebPreferences.txt:10
+msgid "Place for trashed topics and attachments."
+msgstr "Sammelstelle für gelöschte Topics und Anhänge."
+
+#: data/_TrashTemplate/WebRss.txt:5
+msgid "The %1 web of %2."
+msgstr "Das %1 Web auf %2."
+
+#: data/_TrashTemplate/WebHome.txt:3
+msgid ""
+"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"[[TrashAttachment]]."
+msgstr ""
+"Dies ist der Abfall (Trash). Hier können Sie gelöschte Topics "
+"wiederherstellen. Gelöschte Anhänge befinden sich im Topic "
+"[[TrashAttachment]]."
+
+#: data/_TrashTemplate/WebHome.txt:28
+msgid "more..."
+msgstr "mehr..."

@@ -1,0 +1,56 @@
+# Foswiki translation for Russian
+# Translators:
+#   Foswiki:Main/SergejZnamenskij, 2006
+#   Foswiki:Main/AndreyTkachenko, 2006 (Coordinator)
+#   Foswiki:Main/SergeyJSinx, 2006
+#   Foswiki:Main/AlexTananaev, 2007
+#   Foswiki:Main/AndrewPantyukhin, 2009
+msgid ""
+msgstr ""
+"Project-Id-Version: ru $Id\n"
+"Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2010-09-05 10:53+0000\n"
+"Last-Translator: Ivan Pesin <sp_ipesin@n-ix.com.ua>\n"
+"Language-Team: Russian Team <svz@latex.pereslavl.ru, falko-mail@inbox.ru, "
+"jsinx@front.ru, alex@amibel.ru, infofarmer@FreeBSD.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 1.1.0\n"
+
+#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+msgid "Empty Trash"
+msgstr ""
+
+#: data/_TrashTemplate/WebHome.txt:26
+#, fuzzy
+msgid "Last 15 changes in this web"
+msgstr "(обратные ссылки в разделе %1)"
+
+#: data/_TrashTemplate/WebPreferences.txt:10
+#, fuzzy
+msgid "Place for trashed topics and attachments."
+msgstr "Место для удаленных файлов"
+
+#: data/_TrashTemplate/WebRss.txt:5
+#, fuzzy
+msgid "The %1 web of %2."
+msgstr "Раздел %1 не существует"
+
+#: data/_TrashTemplate/WebHome.txt:3
+#, fuzzy
+msgid ""
+"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"[[TrashAttachment]]."
+msgstr ""
+"Это Свалка. Здесь Вы можете восстановить ранее удаленные темы; удалённые "
+"файлы находятся в TrashAttachment."
+
+#: data/_TrashTemplate/WebHome.txt:28
+msgid "more..."
+msgstr "больше..."
+

@@ -12,9 +12,7 @@
 
 ---++ Access control
 
-Restricted to adminsso that deleted topics can't be viewed by spies.
-
    * Set ALLOWWEBVIEW = %USERSWEB%.AdminGroup
-   * Set ALLOWTOPICCHANGE = %USERSWEB%.AdminGroup
-   * Set ALLOWTOPICRENAME = %USERSWEB%.AdminGroup
 
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%
+%META:PREFERENCE{name="PERMSET_CHANGE" title="PERMSET_CHANGE" type="Local" value="nobody"}%

@@ -1,0 +1,49 @@
+# Foswiki translation for <Language>
+# Translators:
+#   <add-yourself-here>
+msgid ""
+msgstr ""
+"Project-Id-Version: Foswiki $Id\n"
+"Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-07-18 15:15+0200\n"
+"Last-Translator: Lieven L. Litaer <qephom@gmx.de>\n"
+"Language-Team: none\n"
+"Language: tlh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
+
+#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+msgid "Empty Trash"
+msgstr ""
+
+#: data/_TrashTemplate/WebHome.txt:26
+#, fuzzy
+msgid "Last 15 changes in this web"
+msgstr "(mIchvamDaq cheghbogh rarwI&&#39;mey tu&&#39;lu&&#39;be&&#39;)"
+
+#: data/_TrashTemplate/WebPreferences.txt:10
+msgid "Place for trashed topics and attachments."
+msgstr "tepmey ghItlhmey je lupolHa&&#39;bogh Daq&&#39;e&&#39;."
+
+#: data/_TrashTemplate/WebRss.txt:5
+msgid "The %1 web of %2."
+msgstr "%2 %1 mIch."
+
+#: data/_TrashTemplate/WebHome.txt:3
+#, fuzzy
+msgid ""
+"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"[[TrashAttachment]]."
+msgstr ""
+"veQ (Trash) &&#39;oH Daqvam&&#39;e&&#39;. naDev ghItlhmey lupolHa&&#39;"
+"lu&&#39;bogh Datlhapqa&&#39;laH; TrashAttachmentDaq bIH tepmey&&#39;e&&#39; "
+"lupolHa&&#39;pu&&#39;bogh."
+
+#: data/_TrashTemplate/WebHome.txt:28
+msgid "more..."
+msgstr "latlh..."
+

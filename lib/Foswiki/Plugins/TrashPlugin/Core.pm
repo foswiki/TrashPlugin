@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# TrashPlugin is Copyright (C) 2013-2022 Michael Daum http://michaeldaumconsulting.com
+# TrashPlugin is Copyright (C) 2013-2024 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -65,7 +65,7 @@ sub restCleanUp {
   $expire =~ s/^\+\-//;
   $expire = "0s" if $expire eq "0"; # special case: empty all
   $expire = '-' . $expire;
-  $this->{expire} = CGI::Util::expire_calc($expire);
+  $this->{expire} = CGI::Util::expire_calc($expire); # SMELL: get rid of CGI::Util
 
   my $trashWebName = $Foswiki::cfg{TrashWebName} || 'Trash';
   foreach my $web (Foswiki::Func::getListOfWebs()) {

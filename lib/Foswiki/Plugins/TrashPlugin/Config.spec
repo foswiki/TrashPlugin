@@ -6,7 +6,7 @@
 # Toggle debug output
 $Foswiki::cfg{TrashPlugin}{Debug} = 0;
 
-# **PERL**
+# **PERL EXPERT**
 $Foswiki::cfg{SwitchBoard}{cleanup_trash} = {
   package  => 'Foswiki::Plugins::TrashPlugin',
   function => 'cleanUp',
@@ -22,7 +22,7 @@ $Foswiki::cfg{SwitchBoard}{cleanup_trash} = {
 # </ul>
 $Foswiki::cfg{TrashPlugin}{Expire} = '1M';
 
-# **REGEX EXPERT**
+# **REGEX**
 # A regular expression of topics that should not be deleted from trash.
 $Foswiki::cfg{TrashPlugin}{ExcludeTopic} = '^(WebAtom|WebRss|WebSearch.*|WebChanges|WebStatistics|WebHome|WebNotify|WebTopicList|WebIndex|WebSideBar|WebPreferences|TrashAttachment|WebLeftBar.*)$';
 

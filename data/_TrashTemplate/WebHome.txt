@@ -1,13 +1,13 @@
 %META:TOPICINFO{author="ProjectContributor" date="1433037425" format="1.1" version="1"}%
 ---+!! %TOPICTITLE%
-%MAKETEXT{"This is the Trash. Here you can undelete topics; deleted attachments are in TrashAttachment." args="<b><nop>%WEB%</b>"}% 
+%MAKETEXT{"This is the Trash. Here you can undelete topics. Deleted attachments are in [[TrashAttachment]]."}% 
 
 %BUTTON{"%MAKETEXT{"Empty Trash"}%" 
   icon="bin" 
   href="%SCRIPTURLPATH{"rest"}%/TrashPlugin/cleanUp?topic=%WEB%.%TOPIC%&redirectto=%ENCODE{"%SCRIPTURL{"view"}%/%WEB%/%TOPIC%" type="url"}%&expire=0"
 }%
 
-<div %IF{"not context FlexWebListPluginEnabled" then="class='foswikiHidden'">
+<div %IF{"not context FlexWebListPluginEnabled" then="class='foswikiHidden'"}%>
 %FLEXWEBLIST{
    subwebs="%WEB%.*"
    header="---++ Webs$n"

@@ -1,0 +1,52 @@
+# Foswiki translation for Japanese
+# Translators:
+#   Foswiki:Main/KenYuminaga, 2008
+msgid ""
+msgstr ""
+"Project-Id-Version: Foswiki $Id\n"
+"Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2010-09-13 04:19+0000\n"
+"Last-Translator: Joel DeJesus <dejesus.joel@gmail.com>\n"
+"Language-Team: Foswiki Japanese team\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.1.0\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+msgid "Empty Trash"
+msgstr ""
+
+#: data/_TrashTemplate/WebHome.txt:26
+#, fuzzy
+msgid "Last 15 changes in this web"
+msgstr "( %1 ウェッブの中のバックリンク)"
+
+#: data/_TrashTemplate/WebPreferences.txt:10
+#, fuzzy
+msgid "Place for trashed topics and attachments."
+msgstr "廃棄した添付ファイルの保存場所"
+
+#: data/_TrashTemplate/WebRss.txt:5
+#, fuzzy
+msgid "The %1 web of %2."
+msgstr "%1ウェブは存在しません"
+
+#: data/_TrashTemplate/WebHome.txt:3
+#, fuzzy
+msgid ""
+"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"[[TrashAttachment]]."
+msgstr ""
+"これはごみ箱です。ここでトピックをオンデリートすることができます。削除された"
+"添付ファイルは TrashAttachment にあります"
+
+#: data/_TrashTemplate/WebHome.txt:28
+msgid "more..."
+msgstr "もっと多く……"
+

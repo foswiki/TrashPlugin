@@ -49,7 +49,8 @@ Optionally add an "Empty Trash" button to [[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%.%
 %$DEPENDENCIES%
 
 ---++ Change History
-|  05 Mar 2022: | add support for custom Trash webs |
+|  26 Jan 2024: | added translations |
+|  05 Mar 2022: | added support for custom Trash webs |
 |  05 Oct 2021: | make deleting attachments more robust |
 |  11 Feb 2021: | implemented custom trash webs: this allows to have local Trash subwebs |
 |  24 Oct 2017: | don't delete <nop>WebStatistics from trash |
@@ -63,7 +64,7 @@ Optionally add an "Empty Trash" button to [[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%.%
 
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2013-2022 Michael Daum"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2013-2024 Michael Daum"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Home" title="Home" value="Foswiki:Extensions/%TOPIC%"}%
 %META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%

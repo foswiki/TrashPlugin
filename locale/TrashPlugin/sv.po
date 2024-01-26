@@ -1,0 +1,50 @@
+# Foswiki translation for Swedish
+# Translators:
+#   Foswiki:Main/ErikAman, 2006, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: sv\n"
+"Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-06-01 22:28+0200\n"
+"Last-Translator: Lieven L. Litaer <qephom@gmx.de>\n"
+"Language-Team: Swedish <N/A>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.1\n"
+
+#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+msgid "Empty Trash"
+msgstr ""
+
+#: data/_TrashTemplate/WebHome.txt:26
+#, fuzzy
+msgid "Last 15 changes in this web"
+msgstr "(referenser hit inom avdelning %1)"
+
+#: data/_TrashTemplate/WebPreferences.txt:10
+#, fuzzy
+msgid "Place for trashed topics and attachments."
+msgstr "Sida för raderade dokument"
+
+#: data/_TrashTemplate/WebRss.txt:5
+#, fuzzy
+msgid "The %1 web of %2."
+msgstr "Avdelningen %1 finns inte"
+
+#: data/_TrashTemplate/WebHome.txt:3
+#, fuzzy
+msgid ""
+"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"[[TrashAttachment]]."
+msgstr ""
+"Detta är papperskorgen (avdelningen Trash). Raderade bilagor finns på sidan "
+"TrashAttachment."
+
+#: data/_TrashTemplate/WebHome.txt:28
+msgid "more..."
+msgstr "mer..."
+
