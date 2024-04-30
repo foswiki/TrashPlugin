@@ -100,7 +100,7 @@ sub cleanUpWeb {
   my $it = $obj->eachAttachment();
   foreach my $info ($obj->find("FILEATTACHMENT")) {
     my $attachment = $info->{name};
-    if (!$info->{date} || $info->{date} < $this->{expire}) {
+    if (!$info->{movedwhen} || $info->{movedwhen} < $this->{expire}) {
       $this->writeDebug("$attachment expired");
     } else {
       $this->writeDebug("$attachment still fresh last modified ".Foswiki::Time::formatTime($info->{date}));

@@ -20,7 +20,7 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '4.10';
+our $VERSION = '4.11';
 our $RELEASE = '%$RELEASE%';
 our $SHORTDESCRIPTION = 'Maintain the Trash web';
 our $LICENSECODE = '%$LICENSECODE%';
