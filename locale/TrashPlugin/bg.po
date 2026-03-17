@@ -19,11 +19,15 @@ msgstr ""
 "X-Poedit-Country: Bulgaria\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 #, fuzzy
 msgid "Last 15 changes in this web"
 msgstr "(обратни връзки в раздел %1)"
@@ -33,18 +37,22 @@ msgstr "(обратни връзки в раздел %1)"
 msgid "Place for trashed topics and attachments."
 msgstr "Място за изхвърлени прикачени файлове"
 
+#: templates/trashattachment.tmpl:7
+#, fuzzy
+msgid "Placeholder for trashed attachments"
+msgstr "Място за изхвърлени прикачени файлове"
+
 #: data/_TrashTemplate/WebRss.txt:5
 #, fuzzy
 msgid "The %1 web of %2."
 msgstr "Разделът %1 не съществува"
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr "още..."
-

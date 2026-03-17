@@ -18,11 +18,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 #, fuzzy
 msgid "Last 15 changes in this web"
 msgstr "Nessun collegamento in questo Web"
@@ -31,20 +35,32 @@ msgstr "Nessun collegamento in questo Web"
 msgid "Place for trashed topics and attachments."
 msgstr "Segnaposto per allegati cestinati."
 
+#: templates/trashattachment.tmpl:7
+#, fuzzy
+msgid "Placeholder for trashed attachments"
+msgstr "Segnaposto per allegati cestinati."
+
 #: data/_TrashTemplate/WebRss.txt:5
 msgid "The %1 web of %2."
 msgstr "Il Web %1 di %2."
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 #, fuzzy
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 "Ecco il cestino. Qui puoi recuperare le pagine cancellate. Per gli allegati "
 "guarda invece in TrashAttachment."
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr "di più..."
 
+#, fuzzy
+#~ msgid ""
+#~ "This is the Trash. Here you can undelete topics. Deleted attachments are "
+#~ "in [[TrashAttachment]]."
+#~ msgstr ""
+#~ "Ecco il cestino. Qui puoi recuperare le pagine cancellate. Per gli "
+#~ "allegati guarda invece in TrashAttachment."

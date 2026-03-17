@@ -17,11 +17,15 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 1.1.0\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 #, fuzzy
 msgid "Last 15 changes in this web"
 msgstr "(odwołania w dziale %1)"
@@ -31,21 +35,33 @@ msgstr "(odwołania w dziale %1)"
 msgid "Place for trashed topics and attachments."
 msgstr "Miejsce na usunięte załączniki"
 
+#: templates/trashattachment.tmpl:7
+#, fuzzy
+msgid "Placeholder for trashed attachments"
+msgstr "Miejsce na usunięte załączniki"
+
 #: data/_TrashTemplate/WebRss.txt:5
 #, fuzzy
 msgid "The %1 web of %2."
 msgstr "Dział %1 nie istnieje"
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 #, fuzzy
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 "To jest kosz. Tu można przywrócić usunięte strony. Usunięte załączniki "
 "znajdują się na stronie TrashAttachment."
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr "więcej..."
 
+#, fuzzy
+#~ msgid ""
+#~ "This is the Trash. Here you can undelete topics. Deleted attachments are "
+#~ "in [[TrashAttachment]]."
+#~ msgstr ""
+#~ "To jest kosz. Tu można przywrócić usunięte strony. Usunięte załączniki "
+#~ "znajdują się na stronie TrashAttachment."

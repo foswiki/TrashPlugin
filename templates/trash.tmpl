@@ -1,0 +1,64 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+
+%TMPL:DEF{"text"}%
+---+!! Trash
+%MAKETEXT{"This is the Trash. Here you can undelete topics; deleted attachments are in [[TrashAttachment]]." args="<b><nop>%WEB%</b>"}%
+
+%BUTTON{"%MAKETEXT{"Empty Trash"}%" 
+  icon="fa-trash" 
+  href="%SCRIPTURLPATH{"rest"}%/TrashPlugin/cleanUp?topic=%WEB%.%TOPIC%&redirectto=%WEB%.%TOPIC%&expire=0&web=%WEB%"
+}%
+
+%IF{"not context FlexWebListPluginEnabled" then="<div class='foswikiHidden'>" else="<div>"}%
+%FLEXWEBLIST{
+   subwebs="%WEB%.*"
+   header="---++ Webs$n"
+   subheader=""
+   format="$indent* [[$web.WebPreferences][$name]]$n"
+}%
+</div>
+
+<noautolink>
+%TMPL:P{context="DBCachePluginEnabled" then="changes::dbcache" else="changes::default"}%
+</noautolink>
+%TMPL:END%
+
+%TMPL:DEF{"changes::default"}%%SEARCH{"1" 
+  type="query" 
+  nototal="on" 
+  nosearch="on" 
+  reverse="on" 
+  order="modified" 
+  limit="15"
+  header="<h2>%MAKETEXT{"Recent Changes"}%</h2>"
+  excludetopic="WebPreferences, WebTopicList, WebSearch, WebRss, WebAtom, WebHome, WebNotify, WebIndex, WebLeftBar, WebChanges, TrashAttachment, WebStatistics"
+  footer="[[WebTopicList][%MAKETEXT{"more..."}%]]"
+}%%TMPL:END%
+
+%TMPL:DEF{"changes::dbcache"}%%DBQUERY{
+  header="<h2>%MAKETEXT{"Recent Changes"}%</h2>$n"
+  format="<div class='natSearchHit'>
+<a href='%SCRIPTURLPATH{"view"}%/$web/$topic' class='natSearchTarget'>$expand(topictitle)</a>
+  <div class='natSearchSummary'> $summary </div>
+  <div class='natSearchRevision'>
+    <a href='%SCRIPTURLPATH{"diff"}%/$web/$topic' rel='nofollow'>$formatTime(info.date, '$longdate')</a>, <span class='natSearchAuthor'> $percntTMPL:P{
+      context=\"MentionsPluginEnabled\" 
+      then=\"userlink::mention\" 
+      else=\"userlink::default\" 
+      user=\"$expand(info.author)\"
+     }$percnt </span>
+  </div>
+</div>"
+  footer="$n[[WebTopicList][%MAKETEXT{"more..."}%]]"
+  limit="15"
+  hidenull="on"
+  exclude="^(WebPreferences|WebTopicList|WebSearch|WebRss|WebAtom|WebHome|WebNotify|WebIndex|WebLeftBar|WebChanges|TrashAttachment|WebStatistics)$"
+  sort="modified"
+  reverse="on"
+}%%TMPL:END%
+
+%TMPL:DEF{"userlink::default"}%%IF{"istopic '%USERSWEB%.%user%'" then="[[%USERSWEB%.%user%]]" else="<nop>%user%"}%%TMPL:END%
+%TMPL:DEF{"userlink::mention"}%@%user%%TMPL:END%

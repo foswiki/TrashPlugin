@@ -12,6 +12,7 @@ data/_TrashTemplate/WebTopicList.txt 0644
 lib/Foswiki/Plugins/TrashPlugin/Config.spec 0644
 lib/Foswiki/Plugins/TrashPlugin/Core.pm 0644
 lib/Foswiki/Plugins/TrashPlugin/DEPENDENCIES 0644
+lib/Foswiki/Plugins/TrashPlugin/MANIFEST 0644
 lib/Foswiki/Plugins/TrashPlugin.pm 0644
 locale/TrashPlugin/bg.po 0644
 locale/TrashPlugin/cs.po 0644
@@ -37,3 +38,5 @@ locale/TrashPlugin/tr.po 0644
 locale/TrashPlugin/uk.po 0644
 locale/TrashPlugin/zh-cn.po 0644
 locale/TrashPlugin/zh-tw.po 0644
+templates/trashattachment.tmpl 0644
+templates/trash.tmpl 0644

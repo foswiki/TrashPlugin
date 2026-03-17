@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# TrashPlugin is Copyright (C) 2013-2024 Michael Daum http://michaeldaumconsulting.com
+# TrashPlugin is Copyright (C) 2013-2026 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '4.11';
+our $VERSION = '5.00';
 our $RELEASE = '%$RELEASE%';
 our $SHORTDESCRIPTION = 'Maintain the Trash web';
 our $LICENSECODE = '%$LICENSECODE%';
@@ -36,13 +36,25 @@ sub initPlugin {
     http_allow => 'GET,POST',
   );
 
-  my $trashWeb = ($web =~ /$Foswiki::cfg{TrashWebName}$/) ? $web : $web.'.'.$Foswiki::cfg{TrashWebName};
-  if (Foswiki::Func::webExists($trashWeb)) {
-    #print STDERR "setting TRASHWEB to $trashWeb\n";
-    Foswiki::Func::setPreferencesValue("TRASHWEB", $trashWeb);
-  }
+  my $trashWeb = findTrashWeb($web); 
+  Foswiki::Func::setPreferencesValue("TRASHWEB", $trashWeb) if $trashWeb;
 
   return 1;
+}
+
+sub findTrashWeb {
+  my $web = shift;
+
+  return $web if $web =~ /$Foswiki::cfg{TrashWebName}$/;
+
+  my $trashWeb = $web.'.'.$Foswiki::cfg{TrashWebName};
+  return $trashWeb if Foswiki::Func::webExists($trashWeb);
+
+  if ($web =~ /^(.+)[\.\/].*?$/) {
+    return findTrashWeb($1);  
+  }
+
+  return;
 }
 
 sub finishPlugin {

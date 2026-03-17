@@ -1,4 +1,8 @@
 *.swp
+data/**/.store
+data/**/*,v
+pub/**/.store
+pub/**/*,v
 /TrashPlugin.md5
 /TrashPlugin.sha1
 /TrashPlugin.tgz

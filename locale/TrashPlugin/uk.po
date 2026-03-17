@@ -20,11 +20,15 @@ msgstr ""
 "X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 #, fuzzy
 msgid "Last 15 changes in this web"
 msgstr "Нема зворотніх посилань у цьому розділі"
@@ -33,19 +37,32 @@ msgstr "Нема зворотніх посилань у цьому розділ�
 msgid "Place for trashed topics and attachments."
 msgstr "Місце для вилучених тем та файлів."
 
+#: templates/trashattachment.tmpl:7
+#, fuzzy
+msgid "Placeholder for trashed attachments"
+msgstr "Місце для вилучених тем та файлів."
+
 #: data/_TrashTemplate/WebRss.txt:5
 msgid "The %1 web of %2."
 msgstr "Розділ %1 з %2."
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 #, fuzzy
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 "Це Смітник. Тут Ви можете відновити вилучені теми; вилучені додатки "
 "знаходяться в TrashAttachment."
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr "ще..."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the Trash. Here you can undelete topics. Deleted attachments are "
+#~ "in [[TrashAttachment]]."
+#~ msgstr ""
+#~ "Це Смітник. Тут Ви можете відновити вилучені теми; вилучені додатки "
+#~ "знаходяться в TrashAttachment."

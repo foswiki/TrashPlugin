@@ -1,0 +1,14 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+
+%TMPL:DEF{"text"}%
+---+ %MAKETEXT{"Placeholder for trashed attachments"}%
+
+%BUTTON{"%MAKETEXT{"Delete Attachments"}%" 
+  icon="fa-trash" 
+  href="%SCRIPTURLPATH{"rest"}%/TrashPlugin/cleanUp?topic=%WEB%.%TOPIC%&redirectto=%WEB%.%TOPIC%&expire=0&web=%WEB%&mode=attachments"
+}%
+
+%TMPL:END%

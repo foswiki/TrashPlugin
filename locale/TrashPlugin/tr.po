@@ -16,11 +16,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.1\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 msgid "Last 15 changes in this web"
 msgstr ""
 
@@ -28,17 +32,20 @@ msgstr ""
 msgid "Place for trashed topics and attachments."
 msgstr ""
 
+#: templates/trashattachment.tmpl:7
+msgid "Placeholder for trashed attachments"
+msgstr ""
+
 #: data/_TrashTemplate/WebRss.txt:5
 msgid "The %1 web of %2."
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr ""
-

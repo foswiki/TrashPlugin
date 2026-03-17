@@ -20,11 +20,15 @@ msgstr ""
 "X-Poedit-Country: Taiwan\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 #, fuzzy
 msgid "Last 15 changes in this web"
 msgstr "本子網內無反向連結"
@@ -33,19 +37,31 @@ msgstr "本子網內無反向連結"
 msgid "Place for trashed topics and attachments."
 msgstr "存放刪除主題與附件的地方。"
 
+#: templates/trashattachment.tmpl:7
+#, fuzzy
+msgid "Placeholder for trashed attachments"
+msgstr "存放刪除主題與附件的地方。"
+
 #: data/_TrashTemplate/WebRss.txt:5
 msgid "The %1 web of %2."
 msgstr "%2 的子網 %1 。"
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 #, fuzzy
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 "這是垃圾區。您可以在這裏還回刪除的主題；刪除的附件放在 TrashAttachment 中。"
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr "更多..."
 
+#, fuzzy
+#~ msgid ""
+#~ "This is the Trash. Here you can undelete topics. Deleted attachments are "
+#~ "in [[TrashAttachment]]."
+#~ msgstr ""
+#~ "這是垃圾區。您可以在這裏還回刪除的主題；刪除的附件放在 TrashAttachment "
+#~ "中。"

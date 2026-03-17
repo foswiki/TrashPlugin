@@ -17,11 +17,15 @@ msgstr ""
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 #, fuzzy
 msgid "Last 15 changes in this web"
 msgstr "(εισερχόμενοι σύνδεσμοι στον Ιστό %1)"
@@ -31,21 +35,33 @@ msgstr "(εισερχόμενοι σύνδεσμοι στον Ιστό %1)"
 msgid "Place for trashed topics and attachments."
 msgstr "Placeholder for trashed attachments"
 
+#: templates/trashattachment.tmpl:7
+#, fuzzy
+msgid "Placeholder for trashed attachments"
+msgstr "Placeholder for trashed attachments"
+
 #: data/_TrashTemplate/WebRss.txt:5
 #, fuzzy
 msgid "The %1 web of %2."
 msgstr "Ο ιστός %1 δεν υπάρχει"
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 #, fuzzy
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 "Αυτό είναι το Trash. Here you can undelete topics; deleted attachments are "
 "in TrashAttachment."
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr "περισσότερα ..."
 
+#, fuzzy
+#~ msgid ""
+#~ "This is the Trash. Here you can undelete topics. Deleted attachments are "
+#~ "in [[TrashAttachment]]."
+#~ msgstr ""
+#~ "Αυτό είναι το Trash. Here you can undelete topics; deleted attachments "
+#~ "are in TrashAttachment."

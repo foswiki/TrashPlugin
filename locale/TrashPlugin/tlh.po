@@ -16,11 +16,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: data/System/TrashPlugin.txt:42 data/_TrashTemplate/WebHome.txt:5
+#: data/System/TrashPlugin.txt:51 templates/trashattachment.tmpl:9
+msgid "Delete Attachments"
+msgstr ""
+
+#: data/System/TrashPlugin.txt:42 templates/trash.tmpl:10
 msgid "Empty Trash"
 msgstr ""
 
-#: data/_TrashTemplate/WebHome.txt:26
+#: templates/trash.tmpl:32
 #, fuzzy
 msgid "Last 15 changes in this web"
 msgstr "(mIchvamDaq cheghbogh rarwI&&#39;mey tu&&#39;lu&&#39;be&&#39;)"
@@ -29,21 +33,34 @@ msgstr "(mIchvamDaq cheghbogh rarwI&&#39;mey tu&&#39;lu&&#39;be&&#39;)"
 msgid "Place for trashed topics and attachments."
 msgstr "tepmey ghItlhmey je lupolHa&&#39;bogh Daq&&#39;e&&#39;."
 
+#: templates/trashattachment.tmpl:7
+#, fuzzy
+msgid "Placeholder for trashed attachments"
+msgstr "tepmey ghItlhmey je lupolHa&&#39;bogh Daq&&#39;e&&#39;."
+
 #: data/_TrashTemplate/WebRss.txt:5
 msgid "The %1 web of %2."
 msgstr "%2 %1 mIch."
 
-#: data/_TrashTemplate/WebHome.txt:3
+#: templates/trash.tmpl:8
 #, fuzzy
 msgid ""
-"This is the Trash. Here you can undelete topics. Deleted attachments are in "
+"This is the Trash. Here you can undelete topics; deleted attachments are in "
 "[[TrashAttachment]]."
 msgstr ""
 "veQ (Trash) &&#39;oH Daqvam&&#39;e&&#39;. naDev ghItlhmey lupolHa&&#39;"
 "lu&&#39;bogh Datlhapqa&&#39;laH; TrashAttachmentDaq bIH tepmey&&#39;e&&#39; "
 "lupolHa&&#39;pu&&#39;bogh."
 
-#: data/_TrashTemplate/WebHome.txt:28
+#: templates/trash.tmpl:34
 msgid "more..."
 msgstr "latlh..."
 
+#, fuzzy
+#~ msgid ""
+#~ "This is the Trash. Here you can undelete topics. Deleted attachments are "
+#~ "in [[TrashAttachment]]."
+#~ msgstr ""
+#~ "veQ (Trash) &&#39;oH Daqvam&&#39;e&&#39;. naDev ghItlhmey lupolHa&&#39;"
+#~ "lu&&#39;bogh Datlhapqa&&#39;laH; TrashAttachmentDaq bIH tepmey&&#39;"
+#~ "e&&#39; lupolHa&&#39;pu&&#39;bogh."
