@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1773767609" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789121825" format="1.1" version="1"}%
 ---+!! %TOPIC%
 %FORMFIELD{"Description"}%
 
@@ -104,6 +104,7 @@ Note that this will assign the templates to any Trash web on the system, not onl
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  11 Sep 2026: | display trash attachments by date moved instead of modification date |
 |  21 Oct 2025: | added templates for trash webhome and attachments |
 |  13 Jun 2025: | added more parameters to =cleanUp= REST handler |
 |  17 Mar 2025: | search for trash web in all parent webs |
